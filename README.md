@@ -121,6 +121,12 @@ HR_CONTACT_EMAIL=hr@company.local
 
 You can copy from `.env.example`.
 
+Important:
+
+- Do not place your real API key inside `README.md` or commit it to GitHub.
+- Create your OpenAI key in your own OpenAI dashboard, then paste it only into `.env`.
+- The backend reads `OPENAI_API_KEY` from `.env` automatically.
+
 Then start the backend:
 
 ```bash
@@ -166,6 +172,11 @@ On first startup the backend seeds:
 - If the key is missing or an OpenAI request fails, the backend falls back to the local heuristic AI layer so the app still works.
 - The onboarding assistant remains document-grounded: it first retrieves relevant uploaded excerpts and only answers from that retrieved context.
 - Seed data intentionally stays on the local fallback path to avoid API cost during first boot.
+- Safe example backend key setup:
+
+```env
+OPENAI_API_KEY=your_openai_api_key_here
+```
 
 ## Known Limitations
 
